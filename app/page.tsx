@@ -2,7 +2,8 @@ import { BackgroundPattern } from "@/components/background-pattern";
 import { FAQ } from "@/components/faq";
 import { FeaturesComparison } from "@/components/features-comparison";
 import Footer from "@/components/footer";
-import { Hero } from "@/components/hero";
+import Hero from "@/components/hero";
+import Stats from "@/components/stats"; // Import the new Stats component
 
 import { Navbar } from "@/components/navbar";
 import { Testimonials } from "@/components/testimonials";
@@ -17,9 +18,8 @@ export default function Home() {
         <BackgroundPattern />
       </div>
 
-      <WhyChooseUs />
-
-      <FeaturesComparison />
+      <Stats /> {/* Render the Stats component here */}
+   
       <FAQ />
       <Testimonials />
       <Footer />

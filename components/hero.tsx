@@ -1,26 +1,57 @@
-import { Button } from "./ui/button";
+"use client";
+
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
 
-export function Hero() {
+export default function Hero() {
+  const { theme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const heroImageSrc = theme === "dark" ? "/herodark.jpeg" : "/herolight.jpeg";
+
   return (
-    <div className="min-h-[calc(100svh-4rem)] py-16 max-w-(--breakpoint-xl) mx-auto text-center px-6">
-      <h1 className="mt-5 max-w-3xl mx-auto text-4xl sm:text-5xl md:text-6xl leading-[1.1] font-semibold tracking-tighter text-balance">
-        Impulsa el Aprendizaje con Inteligencia Emocional Artificial
-      </h1>
-      <div className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground text-balance">
-        <p>
-          Diseñado para apoyar a docentes, padres y psicólogos, ayuda a mejorar la concentración, reducir el estrés y promover el bienestar emocional durante el proceso educativo.
-        </p>
-      </div>
-      <div className="mt-12 flex gap-4 justify-center">
-        <Button size="lg" asChild><a href="/">Ingresar</a></Button>
-        <Button variant="outline" size="lg" asChild>
-          <a href="#why-choose-us">Conoce Más</a>
-        </Button>
-      </div>
-
-      <div className="mt-20 aspect-video border rounded-lg bg-muted p-2">
-        <Image src="/Fondo.png" alt="Fondo" width={1920} height={1080} className="rounded-lg" />
+    <div className="min-h-screen flex justify-center overflow-hidden">
+      <div className="max-w-(--breakpoint-xl) w-full mx-auto grid lg:grid-cols-2 gap-12 px-6 lg:py-0 pt-4 sm:pt-20">
+        <div className="pt-4 sm:pt-16">
+          <h1 className="mt-6 max-w-[17ch] text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-semibold leading-[1.2]! tracking-tighter">
+            Impulsa el Aprendizaje con Inteligencia Emocional Artificial
+          </h1>
+          <p className="mt-6 max-w-[60ch] text-lg text-foreground/80">
+            Diseñado para apoyar a docentes, padres y psicólogos, ayuda a mejorar la concentración, reducir el estrés y promover el bienestar emocional durante el proceso educativo.
+          </p>
+          <div className="mt-12 flex items-center gap-4">
+            <Button size="lg" className="rounded-full text-base">
+              Ingresar
+            </Button>
+            <Button
+              variant="outline"
+              size="lg"
+              className="rounded-full text-base shadow-none"
+            >
+              Conoce Más
+            </Button>
+          </div>
+        </div>
+        <div className="relative w-full aspect-video lg:aspect-auto lg:w-[1000px] lg:h-[calc(100vh-4rem)] rounded-xl overflow-hidden">
+          {mounted && (
+            <Image
+              src={heroImageSrc}
+              alt="Hero Image"
+              layout="fill"
+              objectFit="cover"
+              className="rounded-xl"
+              quality={100}
+              priority
+              sizes="(max-width: 1024px) 100vw, 1000px"
+            />
+          )}
+        </div>
       </div>
     </div>
   );

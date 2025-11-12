@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "HomeGuardian",
-  description: "Find Safety in Your Home with a Tech Smart Assistant",
+  title: "NeurOs",
+  description: "Proyecto de Inteligencia Artificial Educativa. Desarrollado con Ollama y tecnologías open source.",
 };
 
 export default function RootLayout({

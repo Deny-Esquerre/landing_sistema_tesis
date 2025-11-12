@@ -1,9 +1,9 @@
-import { HeartHandshakeIcon } from "lucide-react";
+import Link from "next/link";
 
 export function Logo() {
   return (
-    <div className="flex items-center gap-2 font-semibold text-xl">
-      <HeartHandshakeIcon /> NeurOS
-    </div>
+    <Link href="/" className="flex items-center gap-2">
+      <span className="text-xl font-semibold">NeurOs</span>
+    </Link>
   );
 }

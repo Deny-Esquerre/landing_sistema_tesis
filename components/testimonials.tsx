@@ -48,7 +48,7 @@ const getColor = (name: string) => {
 
 export function Testimonials() {
   return (
-    <div id="testimonials" className="mx-auto max-w-(--breakpoint-xl) px-6 py-12 sm:py-24">
+    <div id="testimonials" className="mx-auto max-w-(--breakpoint-xl) px-6 py-6 sm:py-12">
       <h2 className="text-center text-4xl font-semibold tracking-tight text-balance sm:text-5xl">
         Amado por Nuestros Usuarios
       </h2>
