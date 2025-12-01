@@ -5,7 +5,7 @@ import {
   ShieldCheckIcon,
 } from "lucide-react";
 import { Button } from "./ui/button";
-import { LogoCloud } from "./logo-cloud";
+import LogoCloud from "./logo-cloud";
 
 const plusPoints = [
   {
