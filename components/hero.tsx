@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Hero() {
   const { theme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -26,7 +28,7 @@ export default function Hero() {
             Diseñado para apoyar a docentes, padres y psicólogos, ayuda a mejorar la concentración, reducir el estrés y promover el bienestar emocional durante el proceso educativo.
           </p>
           <div className="mt-12 flex items-center gap-4">
-            <Button size="lg" className="rounded-full text-base">
+            <Button size="lg" className="rounded-full text-base" onClick={() => router.push('https://sistema-sadaptativo.sadaptativo.org/')}>
               Ingresar
             </Button>
             <Button
